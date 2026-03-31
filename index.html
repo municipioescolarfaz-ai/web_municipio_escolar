@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I.E.E. Francisco Antonio de Zela - Educación de calidad en [Ciudad]">
+    <meta name="description" content="I.E.E. Francisco Antonio de Zela - Educación de calidad en Tacna">
     <title>I.E.E. Francisco Antonio de Zela</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- HEADER -->
@@ -14,7 +17,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <i class="fas fa-graduation-cap"></i>
+                    <img src="img/logo-faz.png" alt="Logo">
                     <span>I.E.E. Francisco Antonio de Zela</span>
                 </div>
                 <ul class="nav-menu">
@@ -35,37 +38,27 @@
 
     <!-- HERO SECTION -->
     <section id="inicio" class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-slide active" style="background-image: url('img/background_inicio_1.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('img/background_inicio_2.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('img/background_inicio_3.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('img/background_inicio_4.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('img/background_inicio_5.jpg')"></div>
+        </div>
         <div class="hero-content">
-            <h1>Educación de Calidad para el Futuro</h1>
-            <p>Formando líderes del mañana con valores y excelencia académica</p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-primary">Matricúlate Ahora</a>
-                <a href="#nosotros" class="btn btn-secondary">Conócenos</a>
-            </div>
+            <h1>MUNICIPIO ESCOLAR</h1>
+            <p>“Construyamos juntos una mejor comunidad. Tu participación hace la diferencia.”</p>
+            
         </div>
     </section>
 
     <!-- NOSOTROS -->
     <section id="nosotros" class="nosotros">
         <div class="container">
-            <h2>Sobre Nuestro Instituto</h2>
+            <h2>MISIÓN</h2>
             <div class="nosotros-grid">
                 <div class="nosotros-text">
-                    <p>I.E.E. Francisco Antonio de Zela es una institución educativa comprometida con la formación integral de niños y jóvenes, ofreciendo educación de calidad desde inicial hasta secundaria.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <h3>500+</h3>
-                            <p>Estudiantes</p>
-                        </div>
-                        <div class="stat">
-                            <h3>30+</h3>
-                            <p>Años de experiencia</p>
-                        </div>
-                        <div class="stat">
-                            <h3>95%</h3>
-                            <p>Tasa de aprobación</p>
-                        </div>
-                    </div>
+                    <p>Promover la participación activa de las estudiantes, fortalecer la convivencia escolar y crear espacios seguros en los que cada voz sea escuchada sin prejuicios. Trabajamos para impulsar iniciativas, actividades y proyectos que beneficien a la comunidad educativa y fomenten una cultura de respeto, inclusión y apoyo mutuo.</p>
                 </div>
                 <div class="nosotros-image">
                     <div class="image-placeholder">
@@ -120,39 +113,61 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="contacto">
+    <section id="contacto" class="contacto py-5 bg-light">
         <div class="container">
-            <h2>Contáctanos</h2>
-            <div class="contacto-grid">
-                <div class="contacto-info">
-                    <div class="contacto-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Dirección</h4>
-                            <p>Av. Principal s/n - [Distrito], [Provincia]</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="text-center mb-5">📧 Contáctanos</h2>
+                    
+                    <div class="row">
+                        <!-- Info izquierda -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="contact-info">
+                                <div class="info-item mb-4">
+                                    <i class="fas fa-map-marker-alt text-primary fs-3"></i>
+                                    <h5>Dirección</h5>
+                                    <p>Av. Principal s/n</p>
+                                </div>
+                                <!-- Más info... -->
+                            </div>
                         </div>
-                    </div>
-                    <div class="contacto-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <p>(01) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="contacto-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@ieezela.edu.pe</p>
+                        
+                        <!-- ✅ FORMULARIO EMAILJS AQUÍ -->
+                        <div class="col-lg-8">
+                            <form id="ieezela-form" class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" name="nombre" 
+                                               placeholder="Nombre completo *" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="email" class="form-control" name="email" 
+                                               placeholder="Correo electrónico *" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" name="telefono" 
+                                           placeholder="Teléfono/WhatsApp">
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" name="nivel" required>
+                                        <option value="">🎓 Nivel de interés</option>
+                                        <option value="inicial">Inicial</option>
+                                        <option value="primaria">Primaria</option>
+                                        <option value="secundaria">Secundaria</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" name="mensaje" rows="4" 
+                                              placeholder="¿En qué podemos ayudarte?" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <form class="contacto-form">
-                    <input type="text" placeholder="Tu nombre" required>
-                    <input type="email" placeholder="Tu email" required>
-                    <textarea placeholder="Tu mensaje" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                </form>
             </div>
         </div>
     </section>
@@ -180,6 +195,13 @@
         </div>
     </footer>
 
+    <!-- BOTÓN SUBIR AL INICIO -->
+    <button id="scrollToTop" class="scroll-to-top" title="Subir al inicio">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

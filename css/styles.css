@@ -5,9 +5,11 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
+
 :root {
-    --primary-color: #2c5aa0;
-    --secondary-color: #f4a261;
+    --primary-color: #00509d;
+    --secondary-color: #ffce10;
     --text-dark: #333;
     --text-light: #666;
     --white: #fff;
@@ -28,7 +30,7 @@ body {
 
 /* HEADER */
 .header {
-    background: var(--white);
+    background: var(--secondary-color);
     box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
@@ -37,7 +39,7 @@ body {
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .nav-container {
@@ -52,9 +54,16 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
+    font-size: 20px;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
 }
 
 .logo i {
@@ -66,17 +75,22 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    font-family: 'Oswald', sans-serif;
 }
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
+    color: black;
+    font-size: 1.1rem;
+    
     transition: color 0.3s;
 }
 
 .nav-link:hover {
     color: var(--primary-color);
+    text-shadow:
+    0.5px 0.5px 1px rgba(0,0,0,0.4),
+    0 0 10px rgba(255,255,255,0.3);
 }
 
 .hamburger {
@@ -95,28 +109,79 @@ body {
 
 /* HERO */
 .hero {
-    background: linear-gradient(rgba(44,90,160,0.8), rgba(44,90,160,0.8)), 
-                url('../images/hero-escuela.jpg');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    overflow: hidden;
+}
+
+.hero-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0s linear;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 51, 69, 0.7);
+    filter: brightness(0.8);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 0rem;
     animation: fadeInUp 1s ease;
+    text-shadow:
+    1px 1px 2px rgba(0,0,0,0.4),
+    0 0 10px rgba(45, 51, 69, 0.8);
 }
 
 .hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-top: 0rem;
+    margin-bottom: 4rem;
     animation: fadeInUp 1s ease 0.2s both;
+    text-shadow:
+    2px 2px 4px rgba(0,0,0,0.4),
+    0 0 10px rgba(45, 51, 69, 0.8);
 }
 
 .hero-buttons {
@@ -138,13 +203,16 @@ body {
 }
 
 .btn-primary {
-    background: var(--secondary-color);
-    color: var(--text-dark);
+    background: var(--primary-color);
+    color: white;
+    border: 2px solid white;
+    
 }
 
 .btn-primary:hover {
     background: #e76f51;
     transform: translateY(-2px);
+    
 }
 
 .btn-secondary {
@@ -376,6 +444,39 @@ h2 {
     }
 }
 
+/* BOTÓN SUBIR AL INICIO */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 999;
+    box-shadow: var(--shadow);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .hamburger {
@@ -433,4 +534,67 @@ h2 {
     section {
         padding: 60px 0;
     }
+}
+
+/* ✅ ESTILOS ESPECÍFICOS PARA EL FORMULARIO */
+.contacto {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    padding: 15px 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 0.2rem rgba(44,90,160,0.15);
+    background: white;
+}
+
+.contact-form .btn-primary {
+    background: linear-gradient(45deg, #2c5aa0, #1e3a8a);
+    border: none;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(44,90,160,0.4);
+}
+
+.info-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.info-item i {
+    margin-bottom: 1rem;
+}
+
+/* Animación loading */
+.btn:disabled {
+    opacity: 0.8;
 }
