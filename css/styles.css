@@ -485,6 +485,22 @@ textarea.form-control {
     }
 }
 
+@media (max-width: 768px) {
+    .logo span { 
+        display: none !important; 
+        transition: opacity 0.3s ease;
+    }
+    
+    .logo {
+        font-size: 0; /* Oculta texto sobrante */
+    }
+    
+    .logo img {
+        height: 35px;
+        margin-right: 0;
+    }
+}
+
 .contacto-item {
     display: flex;
     align-items: flex-start;
@@ -816,6 +832,13 @@ height: 70px;
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
+
+/*NOSOTROS*/
+.nosotros-section {
+    background: var(--primary-color);
+    padding: 5rem 0;
+}
+
 
 /* 🎯 TÍTULOS */
 .section-title {
